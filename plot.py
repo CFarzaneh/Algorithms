@@ -18,5 +18,7 @@ power_smooth = spline(x_orig,my_data,xnew)
 plt.plot(xnew, power_smooth)
 
 plt.title('Insertion Sort')
+plt.ylabel('Time in seconds')
+plt.xlabel('Input size')
 
 plt.show()
