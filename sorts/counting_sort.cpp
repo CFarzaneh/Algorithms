@@ -11,18 +11,16 @@ int main() {
 	srand(time(0));
 	FILE *fp;
 	
-	fp = fopen("output.txt","w");
+	fp = fopen("counting_sort_output.txt","w");
 
 	int j = 0;
 	int i = 10;
-	while(i <= 10) {
+	while(i <= 1000000) {
 		int * arr = new int[i];
 		initialize_array(arr,i);
 
-		printArray(arr,i);
-
 		auto start = std::chrono::high_resolution_clock::now();
-		counting_sort(arr,i);
+		int * sorted =counting_sort(arr,i);
 		auto end = std::chrono::high_resolution_clock::now();
 		double elapsed_time = double(std::chrono::duration_cast <std::chrono::nanoseconds> (end-start).count());
 		if(i != 1000000)
@@ -59,7 +57,7 @@ int* counting_sort(int *arr, int n) {
 	}
 	delete [] C;
 	delete [] B;
-	return arr;
+	return B;
 }
 
 void printArray(int arr[], int n) {

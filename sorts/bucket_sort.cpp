@@ -11,7 +11,7 @@ int main() {
 	srand(time(0));
 	FILE *fp;
 	
-	fp = fopen("output.txt","w");
+	fp = fopen("bucket_sort_output.txt","w");
 
 	int j = 0;
 	int i = 10;
